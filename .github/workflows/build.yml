@@ -2,11 +2,10 @@ name: Build APK
 on: [push, pull_request]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04  # <-- Sadoqatliroq operatsion tizim
     steps:
       - uses: actions/checkout@v2
       - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
+        uses: FarasAtif/buildozer-action@master  # <-- Bu versiya "user"ni qidirmaydi!
         with:
           workdir: .
-          buildozer_version: master
